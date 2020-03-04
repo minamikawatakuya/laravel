@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class TopController extends Controller
 {
     public function index(){
-        echo "TOP(xxx)!";exit();
+        echo "TOP(HOGE)!";exit();
     }
 }
