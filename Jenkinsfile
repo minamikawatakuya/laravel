@@ -15,4 +15,39 @@ pipeline {
 			}
 		}
 	}
+    post {
+        always {
+            
+        }
+        success {
+			mail bcc: '', 
+			body: 'success', 
+			cc: '', 
+			from: '', 
+			replyTo: '', 
+			subject: 'test', 
+			to: 'minata.user@gmail.com'
+        }
+        unstable {
+            mail bcc: '', 
+			body: 'unstable', 
+			cc: '', 
+			from: '', 
+			replyTo: '', 
+			subject: 'test', 
+			to: 'minata.user@gmail.com'
+        }
+        failure {
+			mail bcc: '', 
+			body: 'failure', 
+			cc: '', 
+			from: '', 
+			replyTo: '', 
+			subject: 'test', 
+			to: 'minata.user@gmail.com'
+        }
+        changed {
+            
+        }
+    }
 }
