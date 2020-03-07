@@ -100,7 +100,7 @@ class HogeTest extends TestCase
         //assertThat()
         //assertTrue()
         $this->assertTrue(true);
-        $this->assertTrue(false);
+        //$this->assertTrue(false);
 
         //assertXmlFileEqualsXmlFile()
         //assertXmlStringEqualsXmlFile()
