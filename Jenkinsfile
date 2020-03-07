@@ -17,13 +17,7 @@ pipeline {
 	}
     post {
         always {
-            mail bcc: '', 
-			body: 'always', 
-			cc: '', 
-			from: '', 
-			replyTo: '', 
-			subject: 'test', 
-			to: 'minata.user@gmail.com'
+            echo 'always'
         }
         success {
 			mail bcc: '', 
@@ -53,13 +47,7 @@ pipeline {
 			to: 'minata.user@gmail.com'
         }
         changed {
-            mail bcc: '', 
-			body: 'changed', 
-			cc: '', 
-			from: '', 
-			replyTo: '', 
-			subject: 'test', 
-			to: 'minata.user@gmail.com'   
+            echo 'changed'
         }
     }
 }
