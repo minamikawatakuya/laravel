@@ -25,7 +25,7 @@ pipeline {
 			cc: '', 
 			from: '', 
 			replyTo: '', 
-			subject: 'test', 
+			subject: 'success', 
 			to: 'minata.user@gmail.com'
         }
         unstable {
@@ -34,7 +34,7 @@ pipeline {
 			cc: '', 
 			from: '', 
 			replyTo: '', 
-			subject: 'test', 
+			subject: 'unstable', 
 			to: 'minata.user@gmail.com'
         }
         failure {
@@ -43,7 +43,7 @@ pipeline {
 			cc: '', 
 			from: '', 
 			replyTo: '', 
-			subject: 'test', 
+			subject: 'failure', 
 			to: 'minata.user@gmail.com'
         }
         changed {
