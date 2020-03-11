@@ -17,7 +17,8 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', 'TopController@index');
+Route::get('/', 'IndexController@index');
+Route::get('/mail', 'MailSendController@index');
 
 
 Auth::routes();

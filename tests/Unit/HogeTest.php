@@ -8,9 +8,12 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\User;
 
+use Mail;
+
 class HogeTest extends TestCase
 {
-    use DatabaseMigrations;
+    //use DatabaseMigrations;
+    use DatabaseTransactions;
     
     /**
      * A basic test example.
