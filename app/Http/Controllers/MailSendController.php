@@ -16,6 +16,7 @@ class MailSendController extends Controller
     	    $message->to( env('MAIL_FOR_TEST'), 'Test' )->subject('This is a test mail');
         });
         */
+
         
     }
 }
