@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/', 'IndexController@index');
 Route::get('/mail', 'MailSendController@index');
+Route::get('/json', 'IndexController@json');
+Route::get('/json/{id}', 'IndexController@json');
 
 
 Auth::routes();
