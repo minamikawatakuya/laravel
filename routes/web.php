@@ -17,23 +17,18 @@ Route::get('/', function () {
 });
 */
 
-/*
-Route::get('/', 'IndexController@index');
-Route::get('/mail', 'MailSendController@index');
-Route::get('/json', 'IndexController@json');
-Route::get('/json/{id}', 'IndexController@json');
-*/
-
 Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 /*
 |--------------------------------------------------------------------------
 | 1) User 認証不要
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () { return redirect('/home'); });
+//Route::get('/', function () { return redirect('/home'); });
+Route::get('/', 'IndexController@index');
+Route::get('/mail', 'MailSendController@index');
+Route::get('/json', 'IndexController@json');
+Route::get('/json/{id}', 'IndexController@json');
  
 /*
 |--------------------------------------------------------------------------
