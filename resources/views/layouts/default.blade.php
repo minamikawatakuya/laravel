@@ -11,10 +11,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}?<?php echo date("YmdHis"); ?>" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <ul>
+        <li><a href="/">TOP</a></li>
+        <li><a href="/vue">VUE</a></li>
+        <li><a href="/home">ログイン1</a></li>
+        <li><a href="/admin/home">ログイン2</a></li>
+    </ul>
+    <div>
         @yield('content')
     </div>
 

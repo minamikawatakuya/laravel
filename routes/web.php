@@ -26,9 +26,11 @@ Auth::routes();
 */
 //Route::get('/', function () { return redirect('/home'); });
 Route::get('/', 'IndexController@index');
+Route::get('/vue', 'IndexController@vue');
 Route::get('/mail', 'MailSendController@index');
 Route::get('/json', 'IndexController@json');
 Route::get('/json/{id}', 'IndexController@json');
+Route::get('/detail', 'IndexController@detail');
  
 /*
 |--------------------------------------------------------------------------
