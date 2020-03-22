@@ -126,11 +126,13 @@ class HogeTest extends TestCase
 
         //assertDatabaseHas()
         factory(User::class)->create([
+            'account' => 'hogexyz',
             'name' => 'AAA',
             'email' => 'BBB@CCC.COM',
             'password' => 'ABCABC',
         ]);
-        $this->assertDatabaseHas('users',[
+        $this->assertDatabaseHas('writer',[
+            'account' => 'hogexyz',
             'name' => 'AAA',
             'email' => 'BBB@CCC.COM',
             'password' => 'ABCABC',
