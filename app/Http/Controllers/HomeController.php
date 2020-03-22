@@ -29,7 +29,7 @@ class HomeController extends Controller
         
         $writer_id = Auth::user()->id;
 
-        $articles = $article->get_by_writer_id_delete($writer_id);
+        $articles = $article->get_by_writer_id($writer_id);
 
         $param = [
             'articles' => $articles
