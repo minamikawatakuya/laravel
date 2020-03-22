@@ -40,6 +40,10 @@ Route::get('/detail', 'IndexController@detail');
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/home/detail', 'HomeController@detail');
+    Route::get('/home/add', 'HomeController@add');
+    Route::post('/home/create', 'HomeController@create');
+    Route::get('/home/edit', 'HomeController@edit');
+    Route::post('/home/update', 'HomeController@update');
 });
  
 /*

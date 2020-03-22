@@ -26,6 +26,7 @@
 @endforeach
 </table>
 {{ $articles->links() }}
+<a href="/home/add">新規追加</a>
                 </div>
 
             </div>

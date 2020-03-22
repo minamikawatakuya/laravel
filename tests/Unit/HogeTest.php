@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use App\User;
+use App\Article;
 
 use Mail;
 
@@ -136,6 +137,19 @@ class HogeTest extends TestCase
             'name' => 'AAA',
             'email' => 'BBB@CCC.COM',
             'password' => 'ABCABC',
+        ]);
+
+        $article = new Article;
+        $article->writer_id = "6";
+        $article->title = "hoge-title";
+        $article->content = "hoge-content";
+        $article->updated = "1";
+        $article->save();
+        $this->assertDatabaseHas('article',[
+            'writer_id' => '6',
+            'title' => 'hoge-title',
+            'content' => 'hoge-content',
+            'updated' => '1'
         ]);
 
     }

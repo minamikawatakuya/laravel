@@ -53,4 +53,35 @@ class HomeController extends Controller
         
     }
 
+    public function add(Request $request,Article $article)
+    {
+        return view('home.add');   
+    }
+
+    public function create(Request $request,Article $article)
+    {
+        
+        $this->validate($request, Article::$rules);
+        $form = $request->all();
+        unset($form['_token']);
+        $article->fill($form)->save();
+        return redirect('/home'); 
+    }
+
+    public function edit(Request $request)
+    {
+        $article = Article::find($request->id);
+        return view('home.edit', ['form' => $article]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, Article::$rules);
+        $article = Article::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $article->fill($form)->save();
+        return redirect('/home');
+    }
+
 }

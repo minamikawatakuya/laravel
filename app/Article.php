@@ -9,6 +9,18 @@ class Article extends Model
     
     protected $table = 'article';
 
+    public $timestamps = false;
+
+    public static $rules = array(
+        'title' => 'required|max:100',
+        'content' => 'required',
+    );
+
+    /**
+     * create()やupdate()で入力を受け付ける ホワイトリスト
+     */
+    protected $fillable = ['updated', 'writer_id', 'title', 'content'];
+
     public function writer()
     {
         return $this->belongsTo('App\Writer');
