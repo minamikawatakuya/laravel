@@ -39,6 +39,7 @@ Route::get('/detail', 'IndexController@detail');
 */
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home/detail', 'HomeController@detail');
 });
  
 /*

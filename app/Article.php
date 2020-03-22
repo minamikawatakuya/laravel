@@ -40,4 +40,14 @@ class Article extends Model
 
     }
 
+    public function get_by_writer_id_delete($writer_id){
+
+        $data = $this->where('writer_id',$writer_id)->where('delete_flag','1')
+        ->orderBy('id', 'desc')
+        ->paginate(15);
+
+        return $data;
+
+    }
+
 }

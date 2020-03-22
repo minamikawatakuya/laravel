@@ -16,6 +16,18 @@
 
                     You are logged in!
                 </div>
+
+                <div>
+<table>
+@foreach($articles as $article)
+<tr>
+<td><a href="/home/detail?id={{$article->id}}">{{$article->title}}</a></td>
+</tr>
+@endforeach
+</table>
+{{ $articles->links() }}
+                </div>
+
             </div>
         </div>
     </div>
