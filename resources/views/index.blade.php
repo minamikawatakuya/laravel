@@ -3,6 +3,7 @@
 @section('content')
 <div>
 
+@if ( $writers != NULL )
 <ul>
 @foreach($writers as $writer)
 <li><a href="/?id={{$writer->id}}">
@@ -11,6 +12,7 @@
 </a></li>
 @endforeach
 </ul>
+@endif
 
 @if ( $articles != NULL )
 @if ( $writer_id != NULL )
