@@ -28,8 +28,8 @@ class IndexController extends Controller
 
         }
 
-        //$writers = $writer->get_all_2();
-        $writers = null;
+        $writers = $writer->get_all();
+        //$writers = null;
 
         /*
         foreach($items as $item){
