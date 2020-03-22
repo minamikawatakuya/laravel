@@ -8,7 +8,6 @@
 @foreach($writers as $writer)
 <li><a href="/?id={{$writer->id}}">
 {{$writer->disp_name()}}
-({{$writer->articles_count}})
 </a></li>
 @endforeach
 </ul>

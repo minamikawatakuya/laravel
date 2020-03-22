@@ -18,9 +18,12 @@ class Writer extends Model
     
     public function get_all(){
 
-        $data = $this->all();
+        $items = $this->where('nickname','<>','')
+        ->where('account','<>','')
+        ->limit(20)
+        ->get();
 
-        return $data;
+        return $items;
 
     }
 
