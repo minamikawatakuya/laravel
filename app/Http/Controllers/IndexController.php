@@ -12,11 +12,9 @@ class IndexController extends Controller
     public function index(Request $request,Writer $writer,Article $article){
 
         if( isset($request->id) ){
-
             $writer_id = $request->id;
             $articles = $article->get_by_writer_id($writer_id);
             $writer_name = $writer->get_writer_name_by_writer_id($writer_id);
-
         }else{
 
             $writer_id = "";
