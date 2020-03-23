@@ -62,4 +62,12 @@ class Article extends Model
 
     }
 
+    public function get_article_num_by_writer_id($writer_id){
+
+        $num = $this->where('writer_id',$writer_id)->count();
+
+        return $num;
+
+    }
+
 }

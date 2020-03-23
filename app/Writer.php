@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Article;
+
 class Writer extends Model
 {
     
@@ -18,12 +20,24 @@ class Writer extends Model
     
     public function get_all(){
 
-        $items = $this->where('nickname','<>','')
-        ->where('account','<>','')
-        ->limit(20)
-        ->get();
+        $items = $this->where('article_num','>','0')->orderBy('article_num', 'desc')->get();
 
         return $items;
+
+    }
+
+    public function update_article_num($writers){
+
+        $article = new Article;
+
+        foreach($writers as $writer){
+            $num = $article->get_article_num_by_writer_id($writer->id);
+            $tmp = $this->find($writer->id);
+            $tmp->article_num = $num;
+            $tmp->save();
+        }
+
+        return true;
 
     }
 
@@ -56,23 +70,14 @@ class Writer extends Model
     }
 
     public function disp_name(){
-        /*
-        if( $this->nickname != "" ){
-            $disp_name = $this->nickname;
-        }else{
-            $disp_name = $this->account;
-        }
-        */
         $disp_name = $this->get_disp_name($this->account,$this->nickname);
         return $disp_name;
     }
 
     public function get_writer_name_by_writer_id($writer_id){
-
         $data = $this->where('id',$writer_id)->first();
         $disp_name = $this->get_disp_name($data->account,$data->nickname);
         return $disp_name;
-
     }
 
     private function get_disp_name($account,$nickname){

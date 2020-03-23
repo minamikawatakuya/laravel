@@ -12,12 +12,9 @@ class IndexController extends Controller
     public function index(Request $request,Writer $writer,Article $article){
 
         if( isset($request->id) ){
-            //echo "id";exit();
 
             $writer_id = $request->id;
-
             $articles = $article->get_by_writer_id($writer_id);
-
             $writer_name = $writer->get_writer_name_by_writer_id($writer_id);
 
         }else{
@@ -31,21 +28,9 @@ class IndexController extends Controller
         $writers = $writer->get_all();
         //$writers = null;
 
-        /*
-        foreach($items as $item){
-            echo "<pre>";
-            print_r( count($item->articles) );
-            echo "</pre>";
-            exit();
+        if( isset($request->update_article_num ) ){
+            $writer->update_article_num($writers);
         }
-        */
-        
-        /*
-        echo "<pre>";
-        print_r($items);
-        echo "</pre>";
-        exit();
-        */
 
         $param = [
             'writers' => $writers,
@@ -55,7 +40,6 @@ class IndexController extends Controller
         ];
         return view('index', $param);
 
-        //return view('index');
     }
 
     public function detail(Request $request,Article $article){
@@ -89,16 +73,7 @@ class IndexController extends Controller
             ],
         ];
         return $dummy;
-        /*
-        if ($id == -1)
-        {
-            return User::get()->toJson();
-        }
-        else
-        {
-            return User::find($id)->toJson();
-        }
-        */
+        
     }
 
 }
