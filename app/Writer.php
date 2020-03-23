@@ -20,13 +20,15 @@ class Writer extends Model
     
     public function get_all(){
 
-        $items = $this->where('article_num','>','0')->orderBy('article_num', 'desc')->get();
+        $items = $this->all();
 
         return $items;
 
     }
 
-    public function update_article_num($writers){
+    public function update_article_num(){
+
+        $writers = $this->get_all();
 
         $article = new Article;
 
@@ -57,6 +59,14 @@ class Writer extends Model
         */
 
         //return $filtered;
+        return $items;
+
+    }
+
+    public function get_all_3(){
+
+        $items = $this->where('article_num','>','0')->orderBy('article_num', 'desc')->get();
+
         return $items;
 
     }

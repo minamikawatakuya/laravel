@@ -23,11 +23,11 @@ class IndexController extends Controller
 
         }
 
-        $writers = $writer->get_all();
+        $writers = $writer->get_all_3();
         //$writers = null;
 
         if( isset($request->update_article_num ) ){
-            $writer->update_article_num($writers);
+            $writer->update_article_num();
         }
 
         $param = [
