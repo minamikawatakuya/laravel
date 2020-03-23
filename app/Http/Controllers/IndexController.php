@@ -27,7 +27,8 @@ class IndexController extends Controller
         //$writers = null;
 
         if( isset($request->update_article_num ) ){
-            $writer->update_article_num();
+            //記事数更新(処理が重いのでコメントアウト)
+            //$writer->update_article_num();
         }
 
         $param = [
