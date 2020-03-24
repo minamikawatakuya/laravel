@@ -16,11 +16,9 @@ class IndexController extends Controller
             $articles = $article->get_by_writer_id($writer_id);
             $writer_name = $writer->get_writer_name_by_writer_id($writer_id);
         }else{
-
             $writer_id = "";
             $articles = $article->get_all();
             $writer_name = null;
-
         }
 
         $writers = $writer->get_all_3();
