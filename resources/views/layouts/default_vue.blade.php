@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}?<?php echo date("YmdHis"); ?>" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +25,8 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
+    <script src="/js/app.js?<?php echo date("YmdHis"); ?>"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    
 </body>
 </html>

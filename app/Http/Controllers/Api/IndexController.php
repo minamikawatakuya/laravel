@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 use App\Writer;
 use App\Article;
@@ -49,32 +50,24 @@ class IndexController extends Controller
             'article' => $article
         ];
 
-        return view('detail', $param);
+        return $article;
     }
 
-    public function vue(){
-        return view('vue');
+    public function writers(Writer $writer){
+
+        $writers = $writer->get_all_3();
+
+        return $writers;
+
     }
 
-    public function vue2(){
-        return view('vue2');
-    }
+    public function articles(Request $request,Article $article){
 
-    public function json($id = -1){
-        $dummy=[
-            [
-                "id"=>"1",
-                "name"=>"山田太郎",
-                "email"=>"hoge1@gmail.com"
-            ],
-            [
-                "id"=>"2",
-                "name"=>"鈴木花子",
-                "email"=>"hoge2@gmail.com"
-            ],
-        ];
-        return $dummy;
-        
+        //$articles = $article->get_for_api();
+        $articles = $article->get_all();
+
+        return $articles;
+
     }
 
 }

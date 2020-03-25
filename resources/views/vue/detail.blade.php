@@ -2,6 +2,6 @@
 
 @section('content')
 <div id="app">
-<my-component></my-component>
+<my-component-detail article_id="{{ $article_id }}"></my-component-detail>
 </div>
 @endsection

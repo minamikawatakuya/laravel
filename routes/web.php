@@ -26,11 +26,19 @@ Auth::routes();
 */
 //Route::get('/', function () { return redirect('/home'); });
 Route::get('/', 'IndexController@index');
-Route::get('/vue', 'IndexController@vue');
 Route::get('/mail', 'MailSendController@index');
 Route::get('/json', 'IndexController@json');
 Route::get('/json/{id}', 'IndexController@json');
 Route::get('/detail', 'IndexController@detail');
+
+Route::get('/vue', 'IndexController@vue');
+Route::get('/vue2', 'IndexController@vue2');
+
+Route::get('/vue/detail', 'Vue\IndexController@detail');
+
+Route::get('/api/writers',   'Api\IndexController@writers');
+Route::get('/api/articles',   'Api\IndexController@articles');
+Route::get('/api/detail',   'Api\IndexController@detail');
  
 /*
 |--------------------------------------------------------------------------

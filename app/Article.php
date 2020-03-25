@@ -34,6 +34,14 @@ class Article extends Model
 
     }
 
+    public function get_for_api(){
+
+        $data = $this->orderBy('id', 'desc')->limit(15)->get();
+
+        return $data;
+
+    }
+
     public function get_by_id($id){
 
         $data = $this->where('id',$id)->first();

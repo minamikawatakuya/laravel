@@ -1,7 +1,7 @@
 
 <template>
     <div class="container">
-        <p>{{msg}}</p>
+        <p>xxx{{msg}}xxx</p>
         <hr>
         <ul>
             <li v-for="(person,key) in people">
@@ -18,10 +18,10 @@ const axios = require('axios');
 export default {
     mounted () {
         axios.get('/json')
-            .then(response =>{
-                this.people = response.data;
-                this.msg = 'get data!';
-            });
+        .then(response =>{
+            this.people = response.data;
+            this.msg = 'get data!----';
+        });
     },
     data:function(){
         return {
