@@ -19,6 +19,7 @@
         <li><a href="/home">ログイン1</a></li>
         <li><a href="/admin/home">ログイン2</a></li>
         <li><a href="/vue">VUE</a></li>
+        <li><a href="/vue/login">VUEログイン</a></li>
     </ul>
     <div>
         @yield('content')
