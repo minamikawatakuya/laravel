@@ -19,7 +19,6 @@
         <li><a href="/home">ログイン1</a></li>
         <li><a href="/admin/home">ログイン2</a></li>
         <li><a href="/vue">VUE</a></li>
-        <li><a href="/vue2">VUE2</a></li>
     </ul>
     <div>
         @yield('content')

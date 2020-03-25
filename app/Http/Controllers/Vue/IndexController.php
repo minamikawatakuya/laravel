@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
 
+    public function index(){
+        return view('vue.index');
+    }
+    
     public function detail(Request $request){
 
         $article_id = $request->id;

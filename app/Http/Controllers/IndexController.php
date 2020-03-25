@@ -52,14 +52,6 @@ class IndexController extends Controller
         return view('detail', $param);
     }
 
-    public function vue(){
-        return view('vue');
-    }
-
-    public function vue2(){
-        return view('vue2');
-    }
-
     public function json($id = -1){
         $dummy=[
             [
