@@ -22,7 +22,6 @@ class IndexController extends Controller
         }
         exit();
         */
-        
 
         if( isset($request->id) ){
             $writer_id = $request->id;
