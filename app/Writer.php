@@ -90,6 +90,16 @@ class Writer extends Model
         return $disp_name;
     }
 
+    public function get_writer_data_by_email($email){
+        $data = $this->where('email',$email)->first();
+        if( isset($data->account) ){
+            $data->disp_name = $this->get_disp_name($data->account,$data->nickname);
+        }else{
+            return false;
+        }
+        return $data;
+    }
+
     private function get_disp_name($account,$nickname){
         if( $nickname != "" ){
             $disp_name = $nickname;

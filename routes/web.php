@@ -35,6 +35,8 @@ Route::get('/json/{id}', 'IndexController@json');
 Route::get('/vue', 'Vue\IndexController@index');
 Route::get('/vue/detail', 'Vue\IndexController@detail');
 Route::get('/vue/login', 'Vue\IndexController@login');
+
+Route::get('/api/login',   'Api\IndexController@login');
  
 /*
 |--------------------------------------------------------------------------

@@ -19,6 +19,7 @@ Route::post('/writers',   'Api\IndexController@writers');
 Route::post('/articles',   'Api\IndexController@articles');
 //Route::get('/detail',   'Api\IndexController@detail');
 Route::post('/detail',   'Api\IndexController@detail');
+Route::post('/login',   'Api\IndexController@login');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

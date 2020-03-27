@@ -11,6 +11,18 @@ class IndexController extends Controller
 {
     public function index(Request $request,Writer $writer,Article $article){
 
+        /*
+        $value = "hogepass";
+        $hashedValue = "$2y$10$46KMQ8oRCXjUv/F7sFO2euyFRGFRr5quPWMS9BPZclLySrPX4TWwy";
+        $result = password_verify($value, $hashedValue);
+        if( $result === true ){
+            echo "一致";
+        }else{
+            echo "不一致";
+        }
+        exit();
+        */
+
         if( isset($request->id) ){
             $writer_id = $request->id;
             $articles = $article->get_by_writer_id($writer_id);
