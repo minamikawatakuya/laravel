@@ -13,9 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/writers',   'Api\IndexController@writers');
-Route::get('/articles',   'Api\IndexController@articles');
-Route::get('/detail',   'Api\IndexController@detail');
+//Route::get('/writers',   'Api\IndexController@writers');
+Route::post('/writers',   'Api\IndexController@writers');
+//Route::get('/articles',   'Api\IndexController@articles');
+Route::post('/articles',   'Api\IndexController@articles');
+//Route::get('/detail',   'Api\IndexController@detail');
+Route::post('/detail',   'Api\IndexController@detail');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

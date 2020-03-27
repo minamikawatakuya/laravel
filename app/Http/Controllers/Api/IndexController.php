@@ -50,6 +50,7 @@ class IndexController extends Controller
             'article' => $article
         ];
 
+        header("Access-Control-Allow-Origin: *");
         return $article;
     }
 
@@ -57,6 +58,7 @@ class IndexController extends Controller
 
         $writers = $writer->get_all_3();
 
+        header("Access-Control-Allow-Origin: *");
         return $writers;
 
     }
@@ -66,6 +68,7 @@ class IndexController extends Controller
         //$articles = $article->get_for_api();
         $articles = $article->get_all();
 
+        header("Access-Control-Allow-Origin: *");
         return $articles;
 
     }
